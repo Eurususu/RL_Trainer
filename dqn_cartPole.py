@@ -120,6 +120,7 @@ def optimize_model():
     # 这里的操作是为了把 [(s1, a1...), (s2, a2...)] 变成 [s1, s2...], [a1, a2...]
     non_final_mask = torch.tensor(tuple(map(lambda s: s is not None,
                                           batch.next_state)), device=device, dtype=torch.bool)
+    # 对应 s'
     non_final_next_states = torch.cat([s for s in batch.next_state
                                                 if s is not None])
     state_batch = torch.cat(batch.state)
