@@ -30,7 +30,7 @@ class PPO(nn.Module):
             nn.Linear(state_dim, 128),
             nn.Tanh(),
             nn.Linear(128, 1)
-        )
+        )  
         
         # Actor 网络: 输入状态 -> 输出动作概率 (Softmax)
         self.actor = nn.Sequential(

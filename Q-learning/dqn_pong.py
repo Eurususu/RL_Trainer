@@ -91,7 +91,7 @@ class CNN_DQN(nn.Module):
 # ==========================================
 env_name = "PongNoFrameskip-v4"
 # 这里先创建目录，防止 make_env 报错（虽然 RecordVideo 通常会自动创建）
-result_dir = "./results"
+result_dir = "../results"
 video_dir = os.path.join(result_dir, "videos")
 weight_dir = os.path.join(result_dir, "weights")
 curve_dir = os.path.join(result_dir, "curves")
