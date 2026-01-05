@@ -37,7 +37,6 @@ env = VecFrameStack(env, n_stack=4)
 # Video recorder
 env = VecVideoRecorder(env, "videos", record_video_trigger=lambda x: x % 100000 == 0, video_length=2000)
 
-# https://github.com/DLR-RM/rl-trained-agents/blob/10a9c31e806820d59b20d8b85ca67090338ea912/ppo/PongNoFrameskip-v4_1/PongNoFrameskip-v4/config.yml
 model = PPO(policy = "CnnPolicy", # policy="CnnPolicy": 因为输入是图像，我们需要使用卷积神经网络(CNN)提取特征
             env = env,
             batch_size = 256,

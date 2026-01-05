@@ -106,7 +106,7 @@ ARGS = {
     "vf_coef": 0.5,
     "max_grad_norm": 0.5,
     "seed": 42,
-    "anneal_lr": False, # 新增：是否衰减学习率
+    "anneal_lr": True, # 新增：是否衰减学习率
 }
 
 # === 4. 训练主循环 ===

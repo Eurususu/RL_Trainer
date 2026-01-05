@@ -157,6 +157,7 @@ def train():
                 # TD Error: 实际奖励 + 折扣后的未来价值 - 当前预测价值  values[t]->你的直觉（Critic）觉得这一步当时能拿几分。
                 delta = rewards[t] + HYPERPARAMS["gamma"] * nextvalues * nextnonterminal - values[t]
                 # GAE 公式
+                # 优势函数计算，把这些“意外之喜”累加起来
                 advantages[t] = lastgaelam = delta + HYPERPARAMS["gamma"] * HYPERPARAMS["gae_lambda"] * nextnonterminal * lastgaelam
             returns = advantages + values
 
